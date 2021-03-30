@@ -1,0 +1,45 @@
+.settingsContainer{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 350px;
+    margin: 20px;
+}
+
+.settingsButtons{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btnOn{
+    border-style: none;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    border-radius: 10px 0 0 10px;
+    background: #FF8603;
+    outline: none;
+}
+
+.btnOff{
+    border-style: none;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    border-radius: 10px 0 0 10px;
+    background: #BC6200;
+    outline: none;
+    position: relative;
+    left: 5px;
+    z-index: 1;
+}
+
+.settingsMenu{
+    background: #FF8603;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}

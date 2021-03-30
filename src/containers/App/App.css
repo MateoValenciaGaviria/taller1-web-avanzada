@@ -1,0 +1,5 @@
+.html, body, main{
+    display: flex;
+    flex-direction: row;
+    background: #FFB361;
+}

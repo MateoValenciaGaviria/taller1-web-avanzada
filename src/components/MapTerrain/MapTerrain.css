@@ -1,0 +1,22 @@
+.terrainStyle1{
+    background: #9FDE44;
+    width: 62px;
+    height: 62px;
+    position: relative;
+}
+
+.terrainStyle2{
+    background: #8ABD3C;
+    width: 62px;
+    height: 62px;
+    position: relative;
+}
+
+.elementContainer{
+    background: #75757580;
+    height: 60px;
+    width: 30px;
+    position: absolute;
+    left: 25%;
+    bottom: 25%;
+}
