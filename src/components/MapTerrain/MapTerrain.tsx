@@ -4,7 +4,7 @@ import './MapTerrain.css';
 
 interface MapTerrainProps{
         index: number,
-        type: number,
+        type: string,
         visibility: boolean,
         potion: boolean,
         sword: boolean,
@@ -16,14 +16,14 @@ interface MapTerrainProps{
 
 export const MapTerrain: React.FC<MapTerrainProps> = ({ index, type, visibility, potion, sword, shield, boss, bossType, player }) => {
 
-    var type2 = false;
+    var color2 = false;
 
     if(index %2){
-        type2 = true;
+        color2 = true;
     }
 
     return(
-    <div className={`${visibility && (type2 ? 'terrainStyle2' : 'terrainStyle1')}`}>
+    <div className={`${visibility && (color2 ? 'terrainStyle2' : 'terrainStyle1')}`}>
         <div className='elementContainer'>
                
         </div>

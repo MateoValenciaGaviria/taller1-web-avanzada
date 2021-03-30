@@ -1,7 +1,7 @@
 import React from 'react'
 import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
-import { Matrix } from '../../containers/MatrixContainer/MatrixContainer';
-import 'Map.css';
+import { MatrixContainer } from '../../containers/MatrixContainer/MatrixContainer';
+import './Map.css';
 
 interface MapProps {
     mapType: string,
@@ -14,8 +14,10 @@ export const Map: React.FC<MapProps> = ( { mapType, rows, columns } ) => {
     const imageSrc = getImageSrcFromType(`${mapType}`);
 
     return(
-        <div>
-            <Matrix></Matrix>
+        <div className='mainMapContainer'>
+            <div></div>
+            <MatrixContainer></MatrixContainer>
+            <div></div>
         </div>
     );
 }

@@ -1,8 +1,11 @@
 import React from 'react';
+import './MatrixContainer.css'
 
-export const Matrix = () => {
+export const MatrixContainer = () => {
 
     return(
-        <main></main>
+        <div className='mainMatrixContainer'>
+            
+        </div>
     );
 }

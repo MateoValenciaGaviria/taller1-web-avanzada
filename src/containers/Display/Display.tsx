@@ -5,7 +5,7 @@ import './Display.css'
 const initialMap = [
     {
         index: 0,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -16,7 +16,7 @@ const initialMap = [
     },
     {
         index: 1,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -27,7 +27,7 @@ const initialMap = [
     },
     {
         index: 2,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -38,7 +38,7 @@ const initialMap = [
     },
     {
         index: 3,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -49,7 +49,7 @@ const initialMap = [
     },
     {
         index: 4,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -60,7 +60,7 @@ const initialMap = [
     },
     {
         index: 5,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -71,7 +71,7 @@ const initialMap = [
     },
     {
         index: 6,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -82,7 +82,7 @@ const initialMap = [
     },
     {
         index: 7,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -93,7 +93,7 @@ const initialMap = [
     },
     {
         index: 8,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -104,7 +104,7 @@ const initialMap = [
     },
     {
         index: 9,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -115,7 +115,7 @@ const initialMap = [
     },
     {
         index: 10,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -126,7 +126,7 @@ const initialMap = [
     },
     {
         index: 11,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -137,7 +137,7 @@ const initialMap = [
     },
     {
         index: 12,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -148,7 +148,7 @@ const initialMap = [
     },
     {
         index: 13,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -159,7 +159,7 @@ const initialMap = [
     },
     {
         index: 14,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -170,7 +170,7 @@ const initialMap = [
     },
     {
         index: 15,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -181,7 +181,7 @@ const initialMap = [
     },
     {
         index: 16,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -192,7 +192,7 @@ const initialMap = [
     },
     {
         index: 17,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -203,7 +203,7 @@ const initialMap = [
     },
     {
         index: 18,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -214,7 +214,7 @@ const initialMap = [
     },
     {
         index: 19,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -225,7 +225,7 @@ const initialMap = [
     },
     {
         index: 20,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -236,7 +236,7 @@ const initialMap = [
     },
     {
         index: 21,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -247,7 +247,7 @@ const initialMap = [
     },
     {
         index: 0,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -258,7 +258,7 @@ const initialMap = [
     },
     {
         index: 1,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -269,7 +269,7 @@ const initialMap = [
     },
     {
         index: 2,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -280,7 +280,7 @@ const initialMap = [
     },
     {
         index: 3,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -291,7 +291,7 @@ const initialMap = [
     },
     {
         index: 4,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -302,7 +302,7 @@ const initialMap = [
     },
     {
         index: 5,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -313,7 +313,7 @@ const initialMap = [
     },
     {
         index: 6,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -324,7 +324,7 @@ const initialMap = [
     },
     {
         index: 7,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -335,7 +335,7 @@ const initialMap = [
     },
     {
         index: 8,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -346,7 +346,7 @@ const initialMap = [
     },
     {
         index: 9,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -357,7 +357,7 @@ const initialMap = [
     },
     {
         index: 10,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -368,7 +368,7 @@ const initialMap = [
     },
     {
         index: 11,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -379,7 +379,7 @@ const initialMap = [
     },
     {
         index: 12,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -390,7 +390,7 @@ const initialMap = [
     },
     {
         index: 13,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -401,7 +401,7 @@ const initialMap = [
     },
     {
         index: 14,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -412,7 +412,7 @@ const initialMap = [
     },
     {
         index: 15,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -423,7 +423,7 @@ const initialMap = [
     },
     {
         index: 16,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -434,7 +434,7 @@ const initialMap = [
     },
     {
         index: 17,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -445,7 +445,7 @@ const initialMap = [
     },
     {
         index: 18,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -456,7 +456,7 @@ const initialMap = [
     },
     {
         index: 19,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -467,7 +467,7 @@ const initialMap = [
     },
     {
         index: 20,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -478,7 +478,7 @@ const initialMap = [
     },
     {
         index: 21,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -489,7 +489,7 @@ const initialMap = [
     },
     {
         index: 0,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -500,7 +500,7 @@ const initialMap = [
     },
     {
         index: 1,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -511,7 +511,7 @@ const initialMap = [
     },
     {
         index: 2,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -522,7 +522,7 @@ const initialMap = [
     },
     {
         index: 3,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -533,7 +533,7 @@ const initialMap = [
     },
     {
         index: 4,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -544,7 +544,7 @@ const initialMap = [
     },
     {
         index: 5,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -555,7 +555,7 @@ const initialMap = [
     },
     {
         index: 6,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -566,7 +566,7 @@ const initialMap = [
     },
     {
         index: 7,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -577,7 +577,7 @@ const initialMap = [
     },
     {
         index: 8,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -588,7 +588,7 @@ const initialMap = [
     },
     {
         index: 9,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -599,7 +599,7 @@ const initialMap = [
     },
     {
         index: 10,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -610,7 +610,7 @@ const initialMap = [
     },
     {
         index: 11,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -621,7 +621,7 @@ const initialMap = [
     },
     {
         index: 12,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -632,7 +632,7 @@ const initialMap = [
     },
     {
         index: 13,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -643,7 +643,7 @@ const initialMap = [
     },
     {
         index: 14,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -654,7 +654,7 @@ const initialMap = [
     },
     {
         index: 15,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -665,7 +665,7 @@ const initialMap = [
     },
     {
         index: 16,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -676,7 +676,7 @@ const initialMap = [
     },
     {
         index: 17,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -687,7 +687,7 @@ const initialMap = [
     },
     {
         index: 18,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -698,7 +698,7 @@ const initialMap = [
     },
     {
         index: 19,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -709,7 +709,7 @@ const initialMap = [
     },
     {
         index: 20,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
@@ -720,7 +720,7 @@ const initialMap = [
     },
     {
         index: 21,
-        type: 0,
+        type: '',
         visibility: true,
         potion: false,
         sword: false,
