@@ -1,0 +1,15 @@
+.matrixButtonsContainer{
+    margin: 10px 0 20px;
+    display: grid;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+}
+
+.matrixButtons{
+    margin: 2px;
+    border-style: none;
+    background-color: #BC6200;
+    outline: none;
+}

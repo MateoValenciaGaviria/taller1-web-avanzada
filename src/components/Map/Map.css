@@ -1,3 +1,61 @@
 .mainMapContainer{
-    
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    color: white;
+    font-size: 20px;
+}
+
+.rowsColumnsNumberContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.numbersContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.numbersControl{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+.mapInput{
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #BC6200;
+    margin: 0 15px;
+    outline: none;
+    text-align: center;
+    color: white;
+}
+
+.arrowBtn{
+    width: 30px;
+    height: 20px;
+}
+
+.terrainStylesContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.mapStyleBtn{
+    width: 50px;
+    height: 70px;
+}
+
+p{
+    margin: 5px 0 20px 0;
 }

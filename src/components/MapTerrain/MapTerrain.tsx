@@ -3,15 +3,15 @@ import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 import './MapTerrain.css';
 
 interface MapTerrainProps{
-        index: number,
-        type: string,
-        visibility: boolean,
-        potion: boolean,
-        sword: boolean,
-        shield: boolean,
-        boss: boolean,
-        bossType: number,
-        player: boolean,
+    index: number,
+    type: string,
+    visibility: boolean,
+    potion: boolean,
+    sword: boolean,
+    shield: boolean,
+    boss: boolean,
+    bossType: number,
+    player: boolean,
 }
 
 export const MapTerrain: React.FC<MapTerrainProps> = ({ index, type, visibility, potion, sword, shield, boss, bossType, player }) => {

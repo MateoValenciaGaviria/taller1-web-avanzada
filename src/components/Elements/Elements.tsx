@@ -17,7 +17,7 @@ export const Elements: React.FC<ElementsProps> = ( { potion, shield, sword } ) =
 
     return(
         <div className='mainElementsContainer'>
-            <div></div>
+            <div>Elements</div>
             <ElementFeaturesContainer></ElementFeaturesContainer>
         </div>
     );

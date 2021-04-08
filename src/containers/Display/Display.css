@@ -2,13 +2,11 @@
     background: #C06C14;
     height: 500px;
     width: 900px;
-    margin: 20px;
+    margin: 20px 15px 20px 15px;
     border-radius: 10px;
     display: grid;
     flex-flow: wrap;
     align-content: center;
     justify-content: center;
-    grid-template-columns: repeat(11, 62px); 
-    grid-template-rows: repeat(6, 62px); 
     position: relative;
 }

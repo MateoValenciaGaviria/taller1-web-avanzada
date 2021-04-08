@@ -15,7 +15,7 @@ export const Boss: React.FC<BossProps> = ( { bossType, bossColor, index} ) => {
 
     return(
     <div className='mainBossContainer'> 
-        <div></div>
+        <div>Boss</div>
         <div></div>
         <MatrixContainer></MatrixContainer>
     </div>);

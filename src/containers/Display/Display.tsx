@@ -1,8 +1,9 @@
 import React from 'react';
 import { MapTerrain } from '../../components/MapTerrain/MapTerrain';
+import { TerrainType } from '../../utils/TerrainType';
 import './Display.css'
 
-const initialMap = [
+{/*const initial = [
     {
         index: 0,
         type: '',
@@ -729,15 +730,19 @@ const initialMap = [
         bossType: 0,
         player: false,
     },
-]
+]*/}
 
-export const Display = () => {
+interface DisplayProps{
+    rows: number,
+    columns: number,
+    terrains: TerrainType[],
+}
 
-    const [ terrains, setTerrains ] = React.useState(initialMap);
+export const Display: React.FC<DisplayProps> = ( {rows, columns, terrains} ) => {
 
     return(
-        <div className='displayContainer'>
-           {initialMap.map(({ index, type, visibility, potion, sword, shield, boss, bossType, player }) => {
+        <div className='displayContainer' style={{gridTemplateColumns: `repeat(${columns}, 62px)`, gridTemplateRows: `repeat(${rows}, 62px)`}}>
+           {terrains.map(({ index, type, visibility, potion, sword, shield, boss, bossType, player }) => {
                return <MapTerrain
                index = {index}
                type = {type}
