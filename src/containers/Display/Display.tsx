@@ -744,6 +744,8 @@ export const Display: React.FC<DisplayProps> = ( {rows, columns, terrains} ) => 
         <div className='displayContainer' style={{gridTemplateColumns: `repeat(${columns}, 62px)`, gridTemplateRows: `repeat(${rows}, 62px)`}}>
            {terrains.map(({ index, type, visibility, potion, sword, shield, boss, bossType, player }) => {
                return <MapTerrain
+               rows = {rows}
+               columns = {columns}
                index = {index}
                type = {type}
                visibility = {visibility}

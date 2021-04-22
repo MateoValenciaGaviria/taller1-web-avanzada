@@ -12,7 +12,7 @@ interface MapProps {
     onColumnDecrease: () => void;
     onColumnIncrease: () => void;
     onMatrixChange: () => void;
-    onVisibilityChange: () => void;
+    onVisibilityChange: (index: number) => void;
 }
 
 export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange } ) => {

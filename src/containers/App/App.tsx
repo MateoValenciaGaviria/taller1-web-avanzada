@@ -24,13 +24,11 @@ export const App = () => {
         if(rows > 1){
             setRows(rows-1);
         }  
-        handleOnMatrixChange();
     }
     const handleRowsIncrease = () => {
         if(rows < 6){
             setRows(rows+1);
         }  
-        handleOnMatrixChange();
     }
 
     const [ columns, setColumns ] = React.useState(1);
@@ -38,25 +36,23 @@ export const App = () => {
         if(columns > 1){
             setColumns(columns-1);
         }  
-        handleOnMatrixChange();
     }
     const handleColumnsIncrease = () => {
         if(columns < 11){
             setColumns(columns+1);
         }  
-        handleOnMatrixChange();
-    }
-
-    const [ visibility, setVisibility ] = React.useState(initialMap);
-    const handleVisibilityChange = (index?: number) => {
-        const i = visibility.findIndex((terrain) => {
-            return terrain.index === index;
-        });
-        const currentMap = visibility.slice();
-        setVisibility(currentMap);
     }
 
     const [ terrains, setTerrains ] = React.useState(initialMap);
+
+    const handleVisibilityChange = (index: number) => {
+        const i = terrains.findIndex((terrain) => {
+            return terrain.index === index;
+        });
+        const currentMap = terrains.slice();
+        currentMap[i].visibility = !currentMap[i].visibility;
+        setTerrains(currentMap);
+    }
 
     const handleOnMatrixChange = () => {
         var indexTerrain = 0;
@@ -79,6 +75,10 @@ export const App = () => {
         }   
         setTerrains(temporalTerrain);
     }
+
+    React.useEffect(() => {
+        handleOnMatrixChange();
+    }, [ columns, rows ]);
 
     return(
         <main>

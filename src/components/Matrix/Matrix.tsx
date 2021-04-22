@@ -19,7 +19,10 @@ export const Matrix: React.FC<MatrixProps> = ( { rows, columns, onVisibilityChan
     return(
         <div className='matrixButtonsContainer' style={{gridTemplateColumns: `repeat(${columns}, 25px)`, gridTemplateRows: `repeat(${rows}, 25px)`}}>
             {buttons.map(function(currentValue) {
-                return <button className='matrixButtons' onClick={() => onVisibilityChange(currentValue)} value={currentValue}></button>
+                const handleClick = () => {
+                    onVisibilityChange(currentValue);
+                } 
+                return <button className='matrixButtons' onClick={handleClick} value={currentValue}></button>
             })}
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Settings.css'
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Redirect, Route } from 'react-router-dom';
 import { Map } from '../../components/Map/Map';
 import { Boss } from '../../components/Boss/Boss';
 import { Elements } from '../../components/Elements/Elements';
@@ -13,7 +13,7 @@ interface SettingsProps{
     onColumnDecrease: () => void;
     onColumnIncrease: () => void;
     onMatrixChange: () => void;
-    onVisibilityChange: (index?: number) => void;
+    onVisibilityChange: (index: number) => void;
 }
 
 export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange} ) => {
@@ -30,6 +30,7 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                 <Link to="/elements" className='btnOff elementsBtn'></Link>
             </div>
             <div className='settingsMenu'>
+                <Redirect from='/' exact to='/map'></Redirect>
                     <Route path='/map' render={() => 
                         <div className='mapSettingsContainer'>
                             <Map 
