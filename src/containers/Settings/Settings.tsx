@@ -1,6 +1,6 @@
 import React from 'react';
 import './Settings.css'
-import { BrowserRouter, Link, Redirect, Route } from 'react-router-dom';
+import { Link, Redirect, Route } from 'react-router-dom';
 import { Map } from '../../components/Map/Map';
 import { Boss } from '../../components/Boss/Boss';
 import { Elements } from '../../components/Elements/Elements';
@@ -14,13 +14,16 @@ interface SettingsProps{
     onColumnIncrease: () => void;
     onMatrixChange: () => void;
     onVisibilityChange: (index: number) => void;
+    onBossVisibilityChange: (index: number) => void;
+    onPotionVisibilityChange: (index: number) => void;
+    onShieldVisibilityChange: (index: number) => void;
+    onSwordVisibilityChange: (index: number) => void;
 }
 
-export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange} ) => {
+export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onBossVisibilityChange, onPotionVisibilityChange, onShieldVisibilityChange, onSwordVisibilityChange } ) => {
 
     return(
         <div className='settingsContainer'>
-            <BrowserRouter>
             <div className='settingsButtons'>
                 {/* <button className='btnOn enemyBtn'></button>
                 <button className='btnOff mapBtn'></button>
@@ -52,21 +55,28 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                             bossType = {''}
                             bossColor = {0}
                             index = {0}
+                            rows = {rows}
+                            columns = {columns}
+                            onBossVisibilityChange = {onBossVisibilityChange}
                             ></Boss>
                         </div>}>
                     </Route>
                     <Route path='/elements' render={() => 
                         <div className='elementsSettingsContainer'>
                            <Elements
+                           rows = {rows}
+                           columns = {columns}
                            potion = {'potion'}
                            shield = {'shield'}
                            sword = {'sword'}
+                           onPotionVisibilityChange = {onPotionVisibilityChange}
+                           onShieldVisibilityChange = {onShieldVisibilityChange}
+                           onSwordVisibilityChange = {onSwordVisibilityChange}
                            ></Elements>
                         </div>}>
                     </Route>
                 
             </div>
-            </BrowserRouter>
         </div>
     );
 }

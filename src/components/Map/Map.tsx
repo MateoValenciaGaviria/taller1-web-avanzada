@@ -44,7 +44,7 @@ export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrea
                 <Matrix 
                 rows = {rows}
                 columns = {columns}
-                onVisibilityChange = {onVisibilityChange}
+                onMatrixClick = {onVisibilityChange}
                 ></Matrix>
             </div>
             <div className='terrainStylesContainer'>

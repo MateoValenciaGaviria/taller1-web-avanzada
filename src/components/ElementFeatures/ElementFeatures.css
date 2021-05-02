@@ -1,0 +1,27 @@
+.elementFeaturesMainContainer{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.elementVisibilityContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.elementVisibilityInput{
+
+}
+
+.elementVisibilityText{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.elementMatrixText{
+    font-size: 20px;
+    margin-bottom: 20px;
+}

@@ -4,10 +4,10 @@ import './Matrix.css';
 interface MatrixProps{
     rows: number
     columns: number
-    onVisibilityChange: (index: number) => void;
+    onMatrixClick: (index: number) => void;
 }
 
-export const Matrix: React.FC<MatrixProps> = ( { rows, columns, onVisibilityChange } ) => {
+export const Matrix: React.FC<MatrixProps> = ( { rows, columns, onMatrixClick } ) => {
 
     var buttons = [];
     
@@ -20,7 +20,7 @@ export const Matrix: React.FC<MatrixProps> = ( { rows, columns, onVisibilityChan
         <div className='matrixButtonsContainer' style={{gridTemplateColumns: `repeat(${columns}, 25px)`, gridTemplateRows: `repeat(${rows}, 25px)`}}>
             {buttons.map(function(currentValue) {
                 const handleClick = () => {
-                    onVisibilityChange(currentValue);
+                    onMatrixClick(currentValue);
                 } 
                 return <button className='matrixButtons' onClick={handleClick} value={currentValue}></button>
             })}

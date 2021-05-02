@@ -41,7 +41,7 @@ export const MapTerrain: React.FC<MapTerrainProps> = ({ rows, columns, index, ty
 
     return(
     <div className={`${visibility && (color2 ? 'terrainStyle2' : 'terrainStyle1')}`}>
-        <div className={`${visibility && 'elementContainer'}`}>
+        <div className={`${(visibility && (boss || potion || shield || sword )) && 'elementContainer'}`}>
                
         </div>
     </div>);
