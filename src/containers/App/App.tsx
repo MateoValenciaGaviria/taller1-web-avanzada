@@ -2,7 +2,7 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Display } from '../../containers/Display/Display';
 import { Settings } from '../../containers/Settings/Settings';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import './App.css'
 import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 
@@ -297,7 +297,7 @@ export const App = () => {
             <main className='appMainContainer'>
                 <p className='appTittle'>Knights fight</p>
                 <main className='appContainer'>
-                    <BrowserRouter>
+                    <HashRouter basename={process.env.PUBLIC_URL}>
                     <Display
                     rows = {rows}
                     columns = {columns}
@@ -318,7 +318,7 @@ export const App = () => {
                     onSwordVisibilityChange = {handleOnSwordVisibilityChange}
                     onTerrainTypeChange = {handleTerrainTypeChange}
                     ></Settings>
-                    </BrowserRouter>
+                    </HashRouter>
                 </main>
             </main> 
         </AnimatePresence>
