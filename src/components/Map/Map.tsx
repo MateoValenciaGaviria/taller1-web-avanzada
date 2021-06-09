@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
 import React from 'react'
+import { motion } from 'framer-motion';
 import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 import { Matrix } from '../Matrix/Matrix';
 import './Map.css';

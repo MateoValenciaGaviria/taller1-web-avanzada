@@ -293,30 +293,34 @@ export const App = () => {
 
     return(
         <AnimatePresence exitBeforeEnter initial={false}>
-            <main>
-                <BrowserRouter>
-                <Display
-                rows = {rows}
-                columns = {columns}
-                terrains = {terrains}
-                ></Display>
-                <Settings
-                rows = {rows}
-                columns = {columns}
-                onRowsDecrease = {handleRowsDecrease}
-                onRowsIncrease = {handleRowsIncrease}
-                onColumnDecrease = {handleColumnsDecrease}
-                onColumnIncrease = {handleColumnsIncrease}
-                onMatrixChange = {handleOnMatrixChange}
-                onVisibilityChange = {handleVisibilityChange}
-                onBossVisibilityChange = {handleOnBossVisibilityChange}
-                onPotionVisibilityChange = {handleOnPotionVisibilityChange}
-                onShieldVisibilityChange = {handleOnShieldVisibilityChange}
-                onSwordVisibilityChange = {handleOnSwordVisibilityChange}
-                onTerrainTypeChange = {handleTerrainTypeChange}
-                ></Settings>
-                </BrowserRouter>
-            </main>
+            <img className='displayMainBg' src = './images/file_extensions/mainbg.png' />
+            <main className='appMainContainer'>
+                <p className='appTittle'>Knights fight</p>
+                <main className='appContainer'>
+                    <BrowserRouter>
+                    <Display
+                    rows = {rows}
+                    columns = {columns}
+                    terrains = {terrains}
+                    ></Display>
+                    <Settings
+                    rows = {rows}
+                    columns = {columns}
+                    onRowsDecrease = {handleRowsDecrease}
+                    onRowsIncrease = {handleRowsIncrease}
+                    onColumnDecrease = {handleColumnsDecrease}
+                    onColumnIncrease = {handleColumnsIncrease}
+                    onMatrixChange = {handleOnMatrixChange}
+                    onVisibilityChange = {handleVisibilityChange}
+                    onBossVisibilityChange = {handleOnBossVisibilityChange}
+                    onPotionVisibilityChange = {handleOnPotionVisibilityChange}
+                    onShieldVisibilityChange = {handleOnShieldVisibilityChange}
+                    onSwordVisibilityChange = {handleOnSwordVisibilityChange}
+                    onTerrainTypeChange = {handleTerrainTypeChange}
+                    ></Settings>
+                    </BrowserRouter>
+                </main>
+            </main> 
         </AnimatePresence>
     );
 }

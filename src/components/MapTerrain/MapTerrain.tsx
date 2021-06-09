@@ -82,7 +82,7 @@ export const MapTerrain: React.FC<MapTerrainProps> = ({ rows, columns, index, ty
         transition={{ ease: "easeInOut", duration: 0.3 }} 
         className={`${visibility && (color2 ? 'terrainStyle1' : 'terrainNone')}`}>
             <img className='terrainBg' src = {grass1Src} />
-            <div className={`${(visibility && (boss || potion || shield || sword )) && 'elementContainer'}`}>
+            <div className={`${(visibility && (boss || potion || shield || sword )) && (boss) ? 'elementBossContainer' : 'elementContainer'}`}>
                 <img className={`${(visibility && (boss || potion || shield || sword )) && 'imgIconContainer'}`} src={iconSrc} alt=""/>
             </div>
             <div className={`${(visibility ? 'dirtContainer1': 'terrainNone')}`}>
@@ -96,7 +96,7 @@ export const MapTerrain: React.FC<MapTerrainProps> = ({ rows, columns, index, ty
         transition={{ ease: "easeInOut", duration: 0.3 }} 
         className={`${visibility && (!color2 ? 'terrainStyle2' : 'terrainNone')}`}>
             <img className='terrainBg' src = {grass2Src}  />
-            <div className={`${(visibility && (boss || potion || shield || sword )) && 'elementContainer'}`}>
+            <div className={`${(visibility && (boss || potion || shield || sword )) && (boss) ? 'elementBossContainer' : 'elementContainer'}`}>
                 <img className={`${(visibility && (boss || potion || shield || sword )) && 'imgIconContainer'}`} src={iconSrc} alt=""/>
             </div>
             <div className={`${(visibility ? 'dirtContainer2': 'terrainNone')}`}>

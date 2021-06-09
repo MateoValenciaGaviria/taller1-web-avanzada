@@ -1,5 +1,30 @@
 .html, body, main{
     display: flex;
+    flex-direction: column;
+}
+
+.appTittle{
+    margin-left: 15px;
+    color: white;
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+.appContainer{
+    display: flex;
     flex-direction: row;
-    background: #FFB361;
+}
+
+.appMainContainer{
+    position: relative;
+}
+
+.displayMainBg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
 }

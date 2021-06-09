@@ -21,12 +21,30 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
     const shieldimageSrc = getImageSrcFromType(`${shield}`);
     const swordimageSrc = getImageSrcFromType(`${sword}`);
 
+    const [ activeLink, setactiveLink ] = React.useState(1);
+
+    const handlePotion = () => {
+        setactiveLink(1);
+    }
+    const handleShield = () => {
+        setactiveLink(2);
+    }
+    const handleSword = () => {
+        setactiveLink(3);
+    }
+
     return(
         <div className='mainElementsContainer'>
             <div className = 'elementsButtonsContainer'>
-                <Link to="/elements/potion" className = 'elementBtnSelected'></Link>
-                <Link to="/elements/shield"className = 'elementBtn'></Link>
-                <Link to="/elements/sword" className = 'elementBtn'></Link>
+                <Link onClick={handlePotion} to="/elements/potion" className={`${(activeLink == 1) ? 'elementBtnSelected' : 'elementBtn'}`}>
+                    <img className='elementIcon' src = {potionimageSrc}/>
+                </Link>
+                <Link onClick={handleShield} to="/elements/shield"className={`${(activeLink == 2) ? 'elementBtnSelected' : 'elementBtn'}`}>
+                    <img className='elementIcon' src = {shieldimageSrc}/>
+                </Link>
+                <Link onClick={handleSword} to="/elements/sword" className={`${(activeLink == 3) ? 'elementBtnSelected' : 'elementBtn'}`}>
+                    <img className='elementIcon' src = {swordimageSrc}/>
+                </Link>
             </div>
             <Redirect from='/elements' exact to='/elements/potion'></Redirect>
             <Route path='/elements/potion' render={() => 

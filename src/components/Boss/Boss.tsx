@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Matrix } from '../Matrix/Matrix';
 import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 import './Boss.css';
@@ -19,13 +20,21 @@ export const Boss: React.FC<BossProps> = ( { rows, columns, bossType, bossColor,
     return(
     <div className='mainBossContainer'> 
         <div className = 'bossSettingsContainer'>
-            <button className = 'arrowBtn'>-</button>
-                <div className = 'bossTerrainContainer'>
-                    <div className = 'bossImgContainer'>
-
-                    </div>
+            <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }} 
+            className = 'arrowBtn'>
+                <img className='arrowBtnBg' src = "./images/file_extensions/leftarrow.png"/>
+            </motion.button >
+                <div className = 'bossImgContainer'>
+                    <img className='bossImg' src = './images/file_extensions/characters/skeleton1.png' />
                 </div>
-            <button className = 'arrowBtn'>+</button>
+            <motion.button  
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }} 
+            className = 'arrowBtn'>
+                <img className='arrowBtnBg' src = "./images/file_extensions/rightarrow.png"/>
+            </motion.button >
         </div>
         <div></div>
         <Matrix

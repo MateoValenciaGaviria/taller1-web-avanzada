@@ -13,16 +13,18 @@
 }
 
 .btnOn{
+    position: relative;
     border-style: none;
     height: 40px;
     width: 40px;
     margin-top: 20px;
     border-radius: 10px 0 0 10px;
-    background: #FF8603;
+    background: #f78812;
     outline: none;
 }
 
 .btnOff{
+    position: relative;
     border-style: none;
     height: 40px;
     width: 40px;
@@ -35,8 +37,17 @@
     z-index: 1;
 }
 
+.linkIcon{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .settingsMenu{
-    background: #FF8603;
+    background: #f78812;
     height: 100%;
     width: 100%;
     border-radius: 10px;

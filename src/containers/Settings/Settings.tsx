@@ -24,15 +24,33 @@ interface SettingsProps{
 
 export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onBossVisibilityChange, onPotionVisibilityChange, onShieldVisibilityChange, onSwordVisibilityChange, onTerrainTypeChange } ) => {
 
+    const [ activeLink, setactiveLink ] = React.useState(1);
+
+    const handleTerrainBtn = () => {
+        setactiveLink(1);
+    }
+    const handleBossBtn = () => {
+        setactiveLink(2);
+    }
+    const handleElementBtn = () => {
+        setactiveLink(3);
+    }
+
     return(
         <div className='settingsContainer'>
             <div className='settingsButtons'>
                 {/* <button className='btnOn enemyBtn'></button>
                 <button className='btnOff mapBtn'></button>
                 <button className='btnOff elementsBtn'></button> */}
-                <Link to="/map" className='btnOn mapBtn'></Link>
-                <Link to="/boss" className='btnOff bossBtn'></Link>
-                <Link to="/elements" className='btnOff elementsBtn'></Link>
+                <Link onClick={handleTerrainBtn} to="/map" className={`${(activeLink == 1) ? 'btnOn' : 'btnOff'}`}>
+                    <img className='linkIcon' src = './images/file_extensions/terrainicon.png' />
+                </Link>
+                <Link onClick={handleBossBtn} to="/boss" className={`${(activeLink == 2) ? 'btnOn' : 'btnOff'}`}>
+                    <img className='linkIcon' src = './images/file_extensions/bossicon.png' />
+                </Link>
+                <Link onClick={handleElementBtn} to="/elements" className={`${(activeLink == 3) ? 'btnOn' : 'btnOff'}`}>
+                    <img className='linkIcon' src = './images/file_extensions/potionicon.png' />
+                </Link>
             </div>
             <div className='settingsMenu'>
                 <Redirect from='/' exact to='/map'></Redirect>

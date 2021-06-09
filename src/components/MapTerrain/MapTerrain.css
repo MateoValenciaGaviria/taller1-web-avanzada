@@ -60,9 +60,16 @@
 
 .elementContainer{
     /*background: #75757580;*/
-    width: 30px;
+    width: 50%;
     position: absolute;
     left: 25%;
+    bottom: 30%;
+}
+
+.elementBossContainer{
+    width: 90%;
+    position: absolute;
+    left: 5%;
     bottom: 30%;
 }
 

@@ -13,7 +13,7 @@
     align-items: center;
 }
 
-.bossTerrainContainer{
+.bossImgContainer{
     height: 255px;
     width: 150px;
     background-color: #FF3F3F;
@@ -21,4 +21,13 @@
     margin-top: 40px;
     margin-bottom: 20px;
     margin: 40px 20px 20px;
+}
+
+.bossImg{
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -75%);
 }
