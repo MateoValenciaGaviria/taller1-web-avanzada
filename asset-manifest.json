@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/taller1-web-avanzada/static/css/main.de739db2.chunk.css",
-    "main.js": "/taller1-web-avanzada/static/js/main.104d1f00.chunk.js",
-    "main.js.map": "/taller1-web-avanzada/static/js/main.104d1f00.chunk.js.map",
+    "main.js": "/taller1-web-avanzada/static/js/main.2db4844e.chunk.js",
+    "main.js.map": "/taller1-web-avanzada/static/js/main.2db4844e.chunk.js.map",
     "runtime-main.js": "/taller1-web-avanzada/static/js/runtime-main.e319869b.js",
     "runtime-main.js.map": "/taller1-web-avanzada/static/js/runtime-main.e319869b.js.map",
     "static/js/2.2368dab3.chunk.js": "/taller1-web-avanzada/static/js/2.2368dab3.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.e319869b.js",
     "static/js/2.2368dab3.chunk.js",
     "static/css/main.de739db2.chunk.css",
-    "static/js/main.104d1f00.chunk.js"
+    "static/js/main.2db4844e.chunk.js"
   ]
 }
