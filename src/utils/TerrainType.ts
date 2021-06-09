@@ -1,6 +1,6 @@
 export type TerrainType = {
     index: number,
-    type: string,
+    type: number,
     visibility: boolean,
     potion: boolean,
     sword: boolean,
@@ -8,4 +8,5 @@ export type TerrainType = {
     boss: boolean,
     bossType: number,
     player: boolean,
+    iconSrc: string,
 }

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "PixelDigivolve";
+    src: local("PixelDigivolve"),
+    url("./fonts/pixeldigivolve/pixeldigivolve.otf") format("truetype");
+    font-weight: bold;
+}
+
+body {
+    font-family: "PixelDigivolve";
+}
+
+html {
+    font-family: "PixelDigivolve";
+}
+  
+code {
+    font-family: "PixelDigivolve";
+}
+
+input {
+    font-family: "PixelDigivolve";
+}

@@ -10,9 +10,9 @@ interface ElementsProps{
     potion: string,
     shield: string,
     sword: string,
-    onPotionVisibilityChange: (index: number) => void;
-    onShieldVisibilityChange: (index: number) => void;
-    onSwordVisibilityChange: (index: number) => void;
+    onPotionVisibilityChange: (index: number, type: string) => void;
+    onShieldVisibilityChange: (index: number, type: string) => void;
+    onSwordVisibilityChange: (index: number, type: string) => void;
 }
 
 export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shield, sword, onPotionVisibilityChange, onShieldVisibilityChange, onSwordVisibilityChange } ) => {
@@ -35,6 +35,7 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     rows = {rows}
                     columns = {columns}
                     onElementVisibilityChange = {onPotionVisibilityChange}
+                    type = 'potion'
                     ></ElementFeatures>
                 </div>}>
             </Route>
@@ -44,6 +45,7 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     rows = {rows}
                     columns = {columns}
                     onElementVisibilityChange = {onShieldVisibilityChange}
+                    type = 'shield'
                     ></ElementFeatures>
                 </div>}>
             </Route>
@@ -53,6 +55,7 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     rows = {rows}
                     columns = {columns}
                     onElementVisibilityChange = {onSwordVisibilityChange}
+                    type = 'sword'
                     ></ElementFeatures>
                 </div>}>
             </Route>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Settings.css'
 import { Link, Redirect, Route } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Map } from '../../components/Map/Map';
 import { Boss } from '../../components/Boss/Boss';
 import { Elements } from '../../components/Elements/Elements';
@@ -14,13 +15,14 @@ interface SettingsProps{
     onColumnIncrease: () => void;
     onMatrixChange: () => void;
     onVisibilityChange: (index: number) => void;
-    onBossVisibilityChange: (index: number) => void;
-    onPotionVisibilityChange: (index: number) => void;
-    onShieldVisibilityChange: (index: number) => void;
-    onSwordVisibilityChange: (index: number) => void;
+    onBossVisibilityChange: (index: number, type: string) => void;
+    onPotionVisibilityChange: (index: number, type: string) => void;
+    onShieldVisibilityChange: (index: number, type: string) => void;
+    onSwordVisibilityChange: (index: number, type: string) => void;
+    onTerrainTypeChange: (terrainType: number) => void;
 }
 
-export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onBossVisibilityChange, onPotionVisibilityChange, onShieldVisibilityChange, onSwordVisibilityChange } ) => {
+export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onBossVisibilityChange, onPotionVisibilityChange, onShieldVisibilityChange, onSwordVisibilityChange, onTerrainTypeChange } ) => {
 
     return(
         <div className='settingsContainer'>
@@ -35,7 +37,12 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
             <div className='settingsMenu'>
                 <Redirect from='/' exact to='/map'></Redirect>
                     <Route path='/map' render={() => 
-                        <div className='mapSettingsContainer'>
+                        <motion.div 
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
+                        transition={{duration: 0.3}}
+                        className='mapSettingsContainer'>
                             <Map 
                             mapType = {''}
                             rows = {rows}
@@ -46,11 +53,16 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                             onColumnIncrease = {onColumnIncrease}
                             onMatrixChange = {onMatrixChange}
                             onVisibilityChange = {onVisibilityChange}
+                            onTerrainTypeChange = {onTerrainTypeChange}
                             ></Map>
-                        </div>}>
+                        </motion.div>}>
                     </Route>
                     <Route path='/boss' render={() => 
-                        <div className='bossSettingsContainer'>
+                        <motion.div 
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
+                        transition={{duration: 0.3}}className='bossSettingsContainer'>
                             <Boss
                             bossType = {''}
                             bossColor = {0}
@@ -59,10 +71,14 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                             columns = {columns}
                             onBossVisibilityChange = {onBossVisibilityChange}
                             ></Boss>
-                        </div>}>
+                        </motion.div>}>
                     </Route>
                     <Route path='/elements' render={() => 
-                        <div className='elementsSettingsContainer'>
+                        <motion.div 
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
+                        transition={{duration: 0.3}}className='elementsSettingsContainer'>
                            <Elements
                            rows = {rows}
                            columns = {columns}
@@ -73,7 +89,7 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                            onShieldVisibilityChange = {onShieldVisibilityChange}
                            onSwordVisibilityChange = {onSwordVisibilityChange}
                            ></Elements>
-                        </div>}>
+                        </motion.div>}>
                     </Route>
                 
             </div>

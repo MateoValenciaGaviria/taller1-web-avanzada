@@ -1,22 +1,76 @@
 .terrainStyle1{
-    background: #9FDE44;
     width: 62px;
     height: 62px;
     position: relative;
+    margin: 0;
 }
 
 .terrainStyle2{
-    background: #8ABD3C;
     width: 62px;
     height: 62px;
     position: relative;
+    margin: 0;
+}
+
+.dirtContainer1{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: -30%;
+    margin: 0;
+}
+
+.dirtContainer2{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: -30%;
+    margin: 0;
+}
+
+.terrainNone{
+    display: none;
+    position: absolute;
+}
+
+.terrainBg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.dirtBg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.dirtBgFix{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top: -2%;
+    margin: 0;
+    object-fit: cover;
 }
 
 .elementContainer{
-    background: #75757580;
-    height: 60px;
+    /*background: #75757580;*/
     width: 30px;
     position: absolute;
     left: 25%;
-    bottom: 25%;
+    bottom: 30%;
+}
+
+.imgIconContainer{
+    width: 100%;
+}
+
+.false{
+    display: none;
+    position: absolute;
 }

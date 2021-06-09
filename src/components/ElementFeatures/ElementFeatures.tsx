@@ -6,23 +6,21 @@ import './ElementFeatures.css';
 interface ElementFeaturesProps{
     rows: number,
     columns: number,
-    onElementVisibilityChange: (index: number) => void;
+    onElementVisibilityChange: (index: number, type: string) => void;
+    type: string,
 }
 
-export const ElementFeatures: React.FC<ElementFeaturesProps> = ( { rows, columns, onElementVisibilityChange } ) => {
+export const ElementFeatures: React.FC<ElementFeaturesProps> = ( { rows, columns, onElementVisibilityChange, type } ) => {
 
     return(
         <div className = 'elementFeaturesMainContainer'>
-            <div className = 'elementVisibilityContainer'>
-                <input className = 'elementVisibilityInput' type = 'checkbox'></input>
-                <p className = 'elementVisibilityText'>Estado</p>
-            </div>
-                <div>
+            <div>
                 <p className = 'elementMatrixText'>Seleccionar en el mapa la posición del elemento</p>
                 <Matrix 
                 rows = {rows}
                 columns = {columns}
                 onMatrixClick = {onElementVisibilityChange}
+                type = {type}
                 ></Matrix>
             </div>
         </div>

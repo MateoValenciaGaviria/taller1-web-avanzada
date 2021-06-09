@@ -9,7 +9,7 @@ interface BossProps{
     index: number;
     rows: number,
     columns: number,
-    onBossVisibilityChange: (index: number) => void;
+    onBossVisibilityChange: (index: number, type: string) => void;
 }
 
 export const Boss: React.FC<BossProps> = ( { rows, columns, bossType, bossColor, index, onBossVisibilityChange} ) => {
@@ -32,6 +32,7 @@ export const Boss: React.FC<BossProps> = ( { rows, columns, bossType, bossColor,
         rows = {rows}
         columns = {columns}
         onMatrixClick = {onBossVisibilityChange}
+        type = 'boss'
         ></Matrix>
     </div>);
 } 

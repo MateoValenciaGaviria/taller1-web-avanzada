@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 import { Matrix } from '../Matrix/Matrix';
@@ -13,11 +14,28 @@ interface MapProps {
     onColumnIncrease: () => void;
     onMatrixChange: () => void;
     onVisibilityChange: (index: number) => void;
+    onTerrainTypeChange: (terrainType: number) => void;
 }
 
-export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange } ) => {
+export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onTerrainTypeChange } ) => {
 
     const imageSrc = getImageSrcFromType(`${mapType}`);
+
+    const handleClick0 = () => {
+        onTerrainTypeChange(0);
+    } 
+
+    const handleClick1 = () => {
+        onTerrainTypeChange(1);
+    } 
+
+    const handleClick2 = () => {
+        onTerrainTypeChange(2);
+    } 
+
+    const handleClick3 = () => {
+        onTerrainTypeChange(3);
+    } 
 
     return(
         <div className='mainMapContainer'>
@@ -25,17 +43,37 @@ export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrea
                 <div className='numbersContainer'>
                     <div>Filas</div>
                     <div className='numbersControl'>
-                        <button onClick={onRowsDecrease} className='arrowBtn'>-</button>
+                        <motion.button 
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }} 
+                        onClick={onRowsDecrease} className='arrowBtn'>
+                            <img className='arrowBtnBg' src = "./images/file_extensions/leftarrow.png"/>
+                        </motion.button>
                         <input type="text" className='mapInput' value={rows} onChange={onMatrixChange}/>
-                        <button onClick={onRowsIncrease} className='arrowBtn'>+</button>
+                        <motion.button 
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }} 
+                        onClick={onRowsIncrease} className='arrowBtn'>
+                            <img className='arrowBtnBg' src = "./images/file_extensions/rightarrow.png"/>
+                        </motion.button>
                     </div>
                 </div>
                 <div className='numbersContainer'>
                     <div>Columnas</div>
                     <div className='numbersControl'>
-                        <button onClick={onColumnDecrease} className='arrowBtn'>-</button>
+                        <motion.button 
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }} 
+                        onClick={onColumnDecrease} className='arrowBtn'>
+                            <img className='arrowBtnBg' src = "./images/file_extensions/leftarrow.png"/>
+                        </motion.button>
                         <input type="text" className='mapInput'value={columns}/>
-                        <button onClick={onColumnIncrease} className='arrowBtn'>+</button>
+                        <motion.button 
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }} 
+                        onClick={onColumnIncrease} className='arrowBtn'>
+                            <img className='arrowBtnBg' src = "./images/file_extensions/rightarrow.png"/>
+                        </motion.button>
                     </div>
                 </div>
             </div>
@@ -45,13 +83,38 @@ export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrea
                 rows = {rows}
                 columns = {columns}
                 onMatrixClick = {onVisibilityChange}
+                type = ''
                 ></Matrix>
             </div>
             <div className='terrainStylesContainer'>
-                <button className='mapStyleBtn'>Estilo 1</button>
-                <button className='mapStyleBtn'>Estilo 2</button>
-                <button className='mapStyleBtn'>Estilo 3</button>
-                <button className='mapStyleBtn'>Estilo 4</button>
+                <motion.button 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}  
+                onClick={handleClick0}
+                className='mapStyleBtn'>
+                    <img className='mapBtnBg' src = "./images/file_extensions/terrain/greenterrain.png"/>
+                </motion.button>
+                <motion.button 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}  
+                onClick={handleClick1}
+                className='mapStyleBtn'>
+                    <img className='mapBtnBg' src = "./images/file_extensions/terrain/blueterrain.png"/>
+                </motion.button>
+                <motion.button 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}  
+                onClick={handleClick2}
+                className='mapStyleBtn'>
+                    <img className='mapBtnBg' src = "./images/file_extensions/terrain/redterrain.png"/>
+                </motion.button>
+                <motion.button 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}  
+                onClick={handleClick3}
+                className='mapStyleBtn'>
+                    <img className='mapBtnBg' src = "./images/file_extensions/terrain/pinkterrain.png"/>
+                </motion.button>
             </div>
         </div>
     );
