@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/taller1-web-avanzada/static/css/main.de739db2.chunk.css",
-    "main.js": "/taller1-web-avanzada/static/js/main.48aed4ad.chunk.js",
-    "main.js.map": "/taller1-web-avanzada/static/js/main.48aed4ad.chunk.js.map",
+    "main.css": "/taller1-web-avanzada/static/css/main.b37a0954.chunk.css",
+    "main.js": "/taller1-web-avanzada/static/js/main.7673303a.chunk.js",
+    "main.js.map": "/taller1-web-avanzada/static/js/main.7673303a.chunk.js.map",
     "runtime-main.js": "/taller1-web-avanzada/static/js/runtime-main.e319869b.js",
     "runtime-main.js.map": "/taller1-web-avanzada/static/js/runtime-main.e319869b.js.map",
-    "static/js/2.2368dab3.chunk.js": "/taller1-web-avanzada/static/js/2.2368dab3.chunk.js",
-    "static/js/2.2368dab3.chunk.js.map": "/taller1-web-avanzada/static/js/2.2368dab3.chunk.js.map",
+    "static/js/2.0e6801d7.chunk.js": "/taller1-web-avanzada/static/js/2.0e6801d7.chunk.js",
+    "static/js/2.0e6801d7.chunk.js.map": "/taller1-web-avanzada/static/js/2.0e6801d7.chunk.js.map",
     "index.html": "/taller1-web-avanzada/index.html",
-    "static/css/main.de739db2.chunk.css.map": "/taller1-web-avanzada/static/css/main.de739db2.chunk.css.map",
-    "static/js/2.2368dab3.chunk.js.LICENSE.txt": "/taller1-web-avanzada/static/js/2.2368dab3.chunk.js.LICENSE.txt",
+    "static/css/main.b37a0954.chunk.css.map": "/taller1-web-avanzada/static/css/main.b37a0954.chunk.css.map",
+    "static/js/2.0e6801d7.chunk.js.LICENSE.txt": "/taller1-web-avanzada/static/js/2.0e6801d7.chunk.js.LICENSE.txt",
     "static/media/index.css": "/taller1-web-avanzada/static/media/pixeldigivolve.dfd41671.otf"
   },
   "entrypoints": [
     "static/js/runtime-main.e319869b.js",
-    "static/js/2.2368dab3.chunk.js",
-    "static/css/main.de739db2.chunk.css",
-    "static/js/main.48aed4ad.chunk.js"
+    "static/js/2.0e6801d7.chunk.js",
+    "static/css/main.b37a0954.chunk.css",
+    "static/js/main.7673303a.chunk.js"
   ]
 }
