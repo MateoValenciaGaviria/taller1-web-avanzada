@@ -15,7 +15,10 @@ interface BossProps{
 
 export const Boss: React.FC<BossProps> = ( { rows, columns, bossType, bossColor, index, onBossVisibilityChange} ) => {
 
-    const imageSrc = getImageSrcFromType(`${bossType}${bossColor}`);
+    const bossImgSrc = getImageSrcFromType("characters/skeleton1");
+
+    const leftarrowImgSrc = getImageSrcFromType("leftarrow");
+    const rightarrowImgSrc = getImageSrcFromType("rightarrow");
 
     return(
     <div className='mainBossContainer'> 
@@ -24,16 +27,16 @@ export const Boss: React.FC<BossProps> = ( { rows, columns, bossType, bossColor,
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }} 
             className = 'arrowBtn'>
-                <img className='arrowBtnBg' src = "./images/file_extensions/leftarrow.png"/>
+                <img className='arrowBtnBg' src = {leftarrowImgSrc}/>
             </motion.button >
                 <div className = 'bossImgContainer'>
-                    <img className='bossImg' src = './images/file_extensions/characters/skeleton1.png' />
+                    <img className='bossImg' src = {bossImgSrc} />
                 </div>
             <motion.button  
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }} 
             className = 'arrowBtn'>
-                <img className='arrowBtnBg' src = "./images/file_extensions/rightarrow.png"/>
+                <img className='arrowBtnBg' src = {rightarrowImgSrc}/>
             </motion.button >
         </div>
         <div></div>
@@ -41,7 +44,7 @@ export const Boss: React.FC<BossProps> = ( { rows, columns, bossType, bossColor,
         rows = {rows}
         columns = {columns}
         onMatrixClick = {onBossVisibilityChange}
-        type = 'boss'
+        type = 'bossdefault'
         ></Matrix>
     </div>);
 } 

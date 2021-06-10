@@ -19,7 +19,13 @@ interface MapProps {
 
 export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onTerrainTypeChange } ) => {
 
-    const imageSrc = getImageSrcFromType(`${mapType}`);
+    const leftarrowImgSrc = getImageSrcFromType("leftarrow");
+    const rightarrowImgSrc = getImageSrcFromType("rightarrow");
+
+    const greenTerrainImgSrc = getImageSrcFromType("terrain/greenterrain");
+    const blueTerrainImgSrc = getImageSrcFromType("terrain/blueterrain");
+    const redTerrainImgSrc = getImageSrcFromType("terrain/redterrain");
+    const pinkTerrainImgSrc = getImageSrcFromType("terrain/pinkterrain");
 
     const handleClick0 = () => {
         onTerrainTypeChange(0);
@@ -47,14 +53,14 @@ export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrea
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }} 
                         onClick={onRowsDecrease} className='arrowBtn'>
-                            <img className='arrowBtnBg' src = "./images/file_extensions/leftarrow.png"/>
+                            <img className='arrowBtnBg' src = {leftarrowImgSrc}/>
                         </motion.button>
                         <input type="text" className='mapInput' value={rows} onChange={onMatrixChange}/>
                         <motion.button 
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }} 
                         onClick={onRowsIncrease} className='arrowBtn'>
-                            <img className='arrowBtnBg' src = "./images/file_extensions/rightarrow.png"/>
+                            <img className='arrowBtnBg' src = {rightarrowImgSrc}/>
                         </motion.button>
                     </div>
                 </div>
@@ -65,14 +71,14 @@ export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrea
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }} 
                         onClick={onColumnDecrease} className='arrowBtn'>
-                            <img className='arrowBtnBg' src = "./images/file_extensions/leftarrow.png"/>
+                            <img className='arrowBtnBg' src = {leftarrowImgSrc}/>
                         </motion.button>
                         <input type="text" className='mapInput'value={columns}/>
                         <motion.button 
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }} 
                         onClick={onColumnIncrease} className='arrowBtn'>
-                            <img className='arrowBtnBg' src = "./images/file_extensions/rightarrow.png"/>
+                            <img className='arrowBtnBg' src = {rightarrowImgSrc}/>
                         </motion.button>
                     </div>
                 </div>
@@ -92,28 +98,28 @@ export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrea
                 whileTap={{ scale: 0.9 }}  
                 onClick={handleClick0}
                 className='mapStyleBtn'>
-                    <img className='mapBtnBg' src = "./images/file_extensions/terrain/greenterrain.png"/>
+                    <img className='mapBtnBg' src = {greenTerrainImgSrc}/>
                 </motion.button>
                 <motion.button 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}  
                 onClick={handleClick1}
                 className='mapStyleBtn'>
-                    <img className='mapBtnBg' src = "./images/file_extensions/terrain/blueterrain.png"/>
+                    <img className='mapBtnBg' src = {blueTerrainImgSrc}/>
                 </motion.button>
                 <motion.button 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}  
                 onClick={handleClick2}
                 className='mapStyleBtn'>
-                    <img className='mapBtnBg' src = "./images/file_extensions/terrain/redterrain.png"/>
+                    <img className='mapBtnBg' src = {redTerrainImgSrc}/>
                 </motion.button>
                 <motion.button 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}  
                 onClick={handleClick3}
                 className='mapStyleBtn'>
-                    <img className='mapBtnBg' src = "./images/file_extensions/terrain/pinkterrain.png"/>
+                    <img className='mapBtnBg' src = {pinkTerrainImgSrc}/>
                 </motion.button>
             </div>
         </div>

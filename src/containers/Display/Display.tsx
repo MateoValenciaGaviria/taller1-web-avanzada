@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapTerrain } from '../../components/MapTerrain/MapTerrain';
 import { TerrainType } from '../../utils/TerrainType';
+import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 import './Display.css'
 
 {/*const initial = [
@@ -740,9 +741,11 @@ interface DisplayProps{
 
 export const Display: React.FC<DisplayProps> = ( {rows, columns, terrains} ) => {
 
+    const displayBgImgSrc = getImageSrcFromType("displaybg");
+
     return(
         <div className='displayContainer' style={{gridTemplateColumns: `repeat(${columns}, 62px)`, gridTemplateRows: `repeat(${rows}, 62px)`}}>
-            <img className='displayBg' src = './images/file_extensions/displaybg.png' />
+            <img className='displayBg' src = {displayBgImgSrc} />
            {terrains.map(({ index, type, visibility, potion, sword, shield, boss, bossType, player, iconSrc }) => {
                return <MapTerrain
                rows = {rows}

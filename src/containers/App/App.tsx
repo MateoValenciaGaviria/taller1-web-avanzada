@@ -261,15 +261,15 @@ export const App = () => {
         const currentMap = terrains.slice();
 
         if(currentMap[i].iconSrc == ''){
-            currentMap[i].iconSrc = getImageSrcFromType(type);
+            currentMap[i].iconSrc = type;
             for (let j = 0; j < currentMap.length; j++) {
-                if (currentMap[j].iconSrc == getImageSrcFromType(type) && i != j) {
+                if (currentMap[j].iconSrc == type && i != j) {
                     currentMap[j].iconSrc = '';
                 }
             }
-        }else if(currentMap[i].iconSrc == getImageSrcFromType(type)){
+        }else if(currentMap[i].iconSrc == type){
             currentMap[i].iconSrc = '';
-        }else if(currentMap[i].iconSrc != '' && currentMap[i].iconSrc != getImageSrcFromType(type)){
+        }else if(currentMap[i].iconSrc != '' && currentMap[i].iconSrc != type){
 
         }   
 
@@ -291,9 +291,11 @@ export const App = () => {
         handleOnMatrixChange();
     }, [ columns, rows ]);
 
+    const mainBg = getImageSrcFromType("mainbg");
+
     return(
         <AnimatePresence exitBeforeEnter initial={false}>
-            <img className='displayMainBg' src = './images/file_extensions/mainbg.png' />
+            <img className='displayMainBg' src = {mainBg} />
             <main className='appMainContainer'>
                 <p className='appTittle'>Knights fight</p>
                 <main className='appContainer'>

@@ -17,9 +17,9 @@ interface ElementsProps{
 
 export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shield, sword, onPotionVisibilityChange, onShieldVisibilityChange, onSwordVisibilityChange } ) => {
 
-    const potionimageSrc = getImageSrcFromType(`${potion}`);
-    const shieldimageSrc = getImageSrcFromType(`${shield}`);
-    const swordimageSrc = getImageSrcFromType(`${sword}`);
+    const potionimageSrc = getImageSrcFromType("potiondefault");
+    const shieldimageSrc = getImageSrcFromType("shielddefault");
+    const swordimageSrc = getImageSrcFromType("sworddefault");
 
     const [ activeLink, setactiveLink ] = React.useState(1);
 
@@ -53,7 +53,7 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     rows = {rows}
                     columns = {columns}
                     onElementVisibilityChange = {onPotionVisibilityChange}
-                    type = 'potion'
+                    type = {potion}
                     ></ElementFeatures>
                 </div>}>
             </Route>
@@ -63,7 +63,7 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     rows = {rows}
                     columns = {columns}
                     onElementVisibilityChange = {onShieldVisibilityChange}
-                    type = 'shield'
+                    type = {shield}
                     ></ElementFeatures>
                 </div>}>
             </Route>
@@ -73,7 +73,7 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     rows = {rows}
                     columns = {columns}
                     onElementVisibilityChange = {onSwordVisibilityChange}
-                    type = 'sword'
+                    type = {sword}
                     ></ElementFeatures>
                 </div>}>
             </Route>

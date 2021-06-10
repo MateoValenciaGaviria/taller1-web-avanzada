@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Map } from '../../components/Map/Map';
 import { Boss } from '../../components/Boss/Boss';
 import { Elements } from '../../components/Elements/Elements';
+import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 
 interface SettingsProps{
     rows: number,
@@ -36,6 +37,11 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
         setactiveLink(3);
     }
 
+    const terrainIconSrc = getImageSrcFromType("terrainicon");
+    const bossIconSrc = getImageSrcFromType("/bossicon");
+    const potionIconSrc = getImageSrcFromType("/potionicon");
+
+
     return(
         <div className='settingsContainer'>
             <div className='settingsButtons'>
@@ -43,13 +49,13 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                 <button className='btnOff mapBtn'></button>
                 <button className='btnOff elementsBtn'></button> */}
                 <Link onClick={handleTerrainBtn} to="/map" className={`${(activeLink == 1) ? 'btnOn' : 'btnOff'}`}>
-                    <img className='linkIcon' src = './images/file_extensions/terrainicon.png' />
+                    <img className='linkIcon' src={terrainIconSrc} />
                 </Link>
                 <Link onClick={handleBossBtn} to="/boss" className={`${(activeLink == 2) ? 'btnOn' : 'btnOff'}`}>
-                    <img className='linkIcon' src = './images/file_extensions/bossicon.png' />
+                    <img className='linkIcon' src={bossIconSrc} />
                 </Link>
                 <Link onClick={handleElementBtn} to="/elements" className={`${(activeLink == 3) ? 'btnOn' : 'btnOff'}`}>
-                    <img className='linkIcon' src = './images/file_extensions/potionicon.png' />
+                    <img className='linkIcon' src={potionIconSrc} />
                 </Link>
             </div>
             <div className='settingsMenu'>
@@ -100,9 +106,9 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                            <Elements
                            rows = {rows}
                            columns = {columns}
-                           potion = {'potion'}
-                           shield = {'shield'}
-                           sword = {'sword'}
+                           potion = {'potiondefault'}
+                           shield = {'shielddefault'}
+                           sword = {'sworddefault'}
                            onPotionVisibilityChange = {onPotionVisibilityChange}
                            onShieldVisibilityChange = {onShieldVisibilityChange}
                            onSwordVisibilityChange = {onSwordVisibilityChange}
