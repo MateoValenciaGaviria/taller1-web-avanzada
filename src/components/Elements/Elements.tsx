@@ -2,6 +2,7 @@ import React from 'react'
 import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 import { ElementFeatures } from '../ElementFeatures/ElementFeatures';
 import { Route, Redirect, Link } from 'react-router-dom';
+import { TerrainType } from '../../utils/TerrainType';
 import './Elements.css';
 
 interface ElementsProps{
@@ -10,16 +11,21 @@ interface ElementsProps{
     potion: string,
     shield: string,
     sword: string,
-    onPotionVisibilityChange: (index: number, type: string) => void;
-    onShieldVisibilityChange: (index: number, type: string) => void;
-    onSwordVisibilityChange: (index: number, type: string) => void;
+    globalBossIndex: number,
+    globalPotionIndex: number,
+    globalShieldIndex: number,
+    globalSwordIndex: number,
+    terrains: TerrainType[],
+    onPotionIndexChange: (index: number, type: string) => void;
+    onShieldIndexChange: (index: number, type: string) => void;
+    onSwordIndexChange: (index: number, type: string) => void;
 }
 
-export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shield, sword, onPotionVisibilityChange, onShieldVisibilityChange, onSwordVisibilityChange } ) => {
+export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shield, sword,  globalBossIndex, globalPotionIndex, globalShieldIndex, globalSwordIndex, terrains, onPotionIndexChange, onShieldIndexChange, onSwordIndexChange } ) => {
 
-    const potionimageSrc = getImageSrcFromType("potiondefault");
-    const shieldimageSrc = getImageSrcFromType("shielddefault");
-    const swordimageSrc = getImageSrcFromType("sworddefault");
+    const potionimageSrc = getImageSrcFromType("potion");
+    const shieldimageSrc = getImageSrcFromType("shield");
+    const swordimageSrc = getImageSrcFromType("sword");
 
     const [ activeLink, setactiveLink ] = React.useState(1);
 
@@ -52,8 +58,13 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     <ElementFeatures
                     rows = {rows}
                     columns = {columns}
-                    onElementVisibilityChange = {onPotionVisibilityChange}
+                    onElementVisibilityChange = {onPotionIndexChange}
                     type = {potion}
+                    globalBossIndex = {globalBossIndex}
+                    globalPotionIndex = {globalPotionIndex}
+                    globalShieldIndex = {globalShieldIndex}
+                    globalSwordIndex = {globalSwordIndex}
+                    terrains = {terrains}
                     ></ElementFeatures>
                 </div>}>
             </Route>
@@ -62,8 +73,13 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     <ElementFeatures
                     rows = {rows}
                     columns = {columns}
-                    onElementVisibilityChange = {onShieldVisibilityChange}
+                    onElementVisibilityChange = {onShieldIndexChange}
                     type = {shield}
+                    globalBossIndex = {globalBossIndex}
+                    globalPotionIndex = {globalPotionIndex}
+                    globalShieldIndex = {globalShieldIndex}
+                    globalSwordIndex = {globalSwordIndex}
+                    terrains = {terrains}
                     ></ElementFeatures>
                 </div>}>
             </Route>
@@ -72,8 +88,13 @@ export const Elements: React.FC<ElementsProps> = ( { rows, columns, potion, shie
                     <ElementFeatures
                     rows = {rows}
                     columns = {columns}
-                    onElementVisibilityChange = {onSwordVisibilityChange}
+                    onElementVisibilityChange = {onSwordIndexChange}
                     type = {sword}
+                    globalBossIndex = {globalBossIndex}
+                    globalPotionIndex = {globalPotionIndex}
+                    globalShieldIndex = {globalShieldIndex}
+                    globalSwordIndex = {globalSwordIndex}
+                    terrains = {terrains}
                     ></ElementFeatures>
                 </div>}>
             </Route>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { MatrixButton } from '../MatrixButton/MatrixButton';
+import { TerrainType } from '../../utils/TerrainType';
 import './Matrix.css';
 
 interface MatrixProps{
@@ -6,9 +8,14 @@ interface MatrixProps{
     columns: number,
     onMatrixClick: (index: number, type: string) => void;
     type: string,
+    globalBossIndex: number,
+    globalPotionIndex: number,
+    globalShieldIndex: number,
+    globalSwordIndex: number,
+    terrains: TerrainType[]
 }
 
-export const Matrix: React.FC<MatrixProps> = ( { rows, columns, onMatrixClick, type } ) => {
+export const Matrix: React.FC<MatrixProps> = ( { rows, columns, onMatrixClick, type, globalBossIndex, globalPotionIndex, globalShieldIndex, globalSwordIndex, terrains} ) => {
 
     var buttons = [];
     
@@ -20,10 +27,20 @@ export const Matrix: React.FC<MatrixProps> = ( { rows, columns, onMatrixClick, t
     return(
         <div className='matrixButtonsContainer' style={{gridTemplateColumns: `repeat(${columns}, 25px)`, gridTemplateRows: `repeat(${rows}, 25px)`}}>
             {buttons.map(function(currentValue) {
+                
                 const handleClick = () => {
                     onMatrixClick(currentValue, type);
                 } 
-                return <button className='matrixButtons' onClick={handleClick} value={currentValue}></button>
+            return <MatrixButton
+                index = {currentValue}
+                onClick = {handleClick}
+                currentValue = {currentValue}
+                globalBossIndex = {globalBossIndex}
+                globalPotionIndex = {globalPotionIndex}
+                globalShieldIndex = {globalShieldIndex}
+                globalSwordIndex = {globalSwordIndex}
+                terrains = {terrains}
+                ></MatrixButton>
             })}
         </div>
     );

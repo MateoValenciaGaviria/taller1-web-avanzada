@@ -746,19 +746,13 @@ export const Display: React.FC<DisplayProps> = ( {rows, columns, terrains} ) => 
     return(
         <div className='displayContainer' style={{gridTemplateColumns: `repeat(${columns}, 62px)`, gridTemplateRows: `repeat(${rows}, 62px)`}}>
             <img className='displayBg' src = {displayBgImgSrc} />
-           {terrains.map(({ index, type, visibility, potion, sword, shield, boss, bossType, player, iconSrc }) => {
+           {terrains.map(({ index, type, visibility, iconSrc }) => {
                return <MapTerrain
                rows = {rows}
                columns = {columns}
                index = {index}
                type = {type}
                visibility = {visibility}
-               potion = {potion}
-               sword = {sword}
-               shield = {shield}
-               boss = {boss}
-               bossType = {bossType}
-               player = {player}
                iconSrc = {iconSrc}
                ></MapTerrain>
            })}

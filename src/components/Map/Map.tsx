@@ -2,12 +2,18 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
 import { Matrix } from '../Matrix/Matrix';
+import { TerrainType } from '../../utils/TerrainType';
 import './Map.css';
 
 interface MapProps {
     mapType: string,
     rows: number,
     columns: number,
+    globalBossIndex: number,
+    globalPotionIndex: number,
+    globalShieldIndex: number,
+    globalSwordIndex: number,
+    terrains: TerrainType[],
     onRowsDecrease: () => void;
     onRowsIncrease: () => void;
     onColumnDecrease: () => void;
@@ -17,7 +23,7 @@ interface MapProps {
     onTerrainTypeChange: (terrainType: number) => void;
 }
 
-export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onTerrainTypeChange } ) => {
+export const Map: React.FC<MapProps> = ( { mapType, rows, columns, globalBossIndex, globalPotionIndex, globalShieldIndex, globalSwordIndex, terrains, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onTerrainTypeChange } ) => {
 
     const leftarrowImgSrc = getImageSrcFromType("leftarrow");
     const rightarrowImgSrc = getImageSrcFromType("rightarrow");
@@ -90,6 +96,11 @@ export const Map: React.FC<MapProps> = ( { mapType, rows, columns,  onRowsDecrea
                 columns = {columns}
                 onMatrixClick = {onVisibilityChange}
                 type = ''
+                globalBossIndex = {globalBossIndex}
+                globalPotionIndex = {globalPotionIndex}
+                globalShieldIndex = {globalShieldIndex}
+                globalSwordIndex = {globalSwordIndex}
+                terrains = {terrains}
                 ></Matrix>
             </div>
             <div className='terrainStylesContainer'>

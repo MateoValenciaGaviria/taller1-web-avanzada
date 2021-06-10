@@ -6,24 +6,32 @@ import { Map } from '../../components/Map/Map';
 import { Boss } from '../../components/Boss/Boss';
 import { Elements } from '../../components/Elements/Elements';
 import { getImageSrcFromType } from '../../utils/getImageSrcFromType';
+import { TerrainType } from '../../utils/TerrainType';
 
 interface SettingsProps{
     rows: number,
     columns: number,
+    globalBossType: string,
+    globalBossIndex: number,
+    globalPotionIndex: number,
+    globalShieldIndex: number,
+    globalSwordIndex: number,
+    terrains: TerrainType[],
     onRowsDecrease: () => void;
     onRowsIncrease: () => void;
     onColumnDecrease: () => void;
     onColumnIncrease: () => void;
     onMatrixChange: () => void;
     onVisibilityChange: (index: number) => void;
-    onBossVisibilityChange: (index: number, type: string) => void;
-    onPotionVisibilityChange: (index: number, type: string) => void;
-    onShieldVisibilityChange: (index: number, type: string) => void;
-    onSwordVisibilityChange: (index: number, type: string) => void;
+    onBossTypeChange: (bossType: string) => void;
     onTerrainTypeChange: (terrainType: number) => void;
+    onBossIndexChange: (index: number) => void;
+    onPotionIndexChange: (index: number) => void;
+    onShieldIndexChange: (index: number) => void;
+    onSwordIndexChange: (index: number) => void;
 }
 
-export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onBossVisibilityChange, onPotionVisibilityChange, onShieldVisibilityChange, onSwordVisibilityChange, onTerrainTypeChange } ) => {
+export const Settings: React.FC<SettingsProps> = ( {rows, columns, globalBossType, globalBossIndex, globalPotionIndex, globalShieldIndex, globalSwordIndex, terrains, onRowsDecrease, onRowsIncrease, onColumnDecrease, onColumnIncrease, onMatrixChange, onVisibilityChange, onTerrainTypeChange, onBossTypeChange, onBossIndexChange, onPotionIndexChange, onShieldIndexChange, onSwordIndexChange } ) => {
 
     const [ activeLink, setactiveLink ] = React.useState(1);
 
@@ -71,6 +79,11 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                             mapType = {''}
                             rows = {rows}
                             columns = {columns}
+                            globalBossIndex = {globalBossIndex}
+                            globalPotionIndex = {globalPotionIndex}
+                            globalShieldIndex = {globalShieldIndex}
+                            globalSwordIndex = {globalSwordIndex}
+                            terrains = {terrains}
                             onRowsDecrease = {onRowsDecrease}
                             onRowsIncrease = {onRowsIncrease}
                             onColumnDecrease = {onColumnDecrease}
@@ -88,12 +101,18 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                         exit={{opacity: 0}}
                         transition={{duration: 0.3}}className='bossSettingsContainer'>
                             <Boss
-                            bossType = {''}
+                            bossType = {globalBossType}
                             bossColor = {0}
                             index = {0}
                             rows = {rows}
                             columns = {columns}
-                            onBossVisibilityChange = {onBossVisibilityChange}
+                            globalBossIndex = {globalBossIndex}
+                            globalPotionIndex = {globalPotionIndex}
+                            globalShieldIndex = {globalShieldIndex}
+                            globalSwordIndex = {globalSwordIndex}
+                            terrains = {terrains}
+                            onBossTypeChange = {onBossTypeChange}
+                            onBossPositionChange = {onBossIndexChange}
                             ></Boss>
                         </motion.div>}>
                     </Route>
@@ -106,12 +125,17 @@ export const Settings: React.FC<SettingsProps> = ( {rows, columns, onRowsDecreas
                            <Elements
                            rows = {rows}
                            columns = {columns}
-                           potion = {'potiondefault'}
-                           shield = {'shielddefault'}
-                           sword = {'sworddefault'}
-                           onPotionVisibilityChange = {onPotionVisibilityChange}
-                           onShieldVisibilityChange = {onShieldVisibilityChange}
-                           onSwordVisibilityChange = {onSwordVisibilityChange}
+                           potion = {'potion'}
+                           shield = {'shield'}
+                           sword = {'sword'}
+                           globalPotionIndex = {globalPotionIndex}
+                           globalShieldIndex = {globalShieldIndex}
+                           globalSwordIndex = {globalSwordIndex}
+                           terrains = {terrains}
+                           onPotionIndexChange = {onPotionIndexChange}
+                           onShieldIndexChange = {onShieldIndexChange}
+                           onSwordIndexChange = {onSwordIndexChange}
+                           globalBossIndex = {globalBossIndex}
                            ></Elements>
                         </motion.div>}>
                     </Route>

@@ -9,16 +9,10 @@ interface MapTerrainProps{
     index: number,
     type: number,
     visibility: boolean,
-    potion: boolean,
-    sword: boolean,
-    shield: boolean,
-    boss: boolean,
-    bossType: number,
-    player: boolean,
     iconSrc: string,
 }
 
-export const MapTerrain: React.FC<MapTerrainProps> = ({ rows, columns, index, type, visibility, potion, sword, shield, boss, bossType, player, iconSrc }) => {
+export const MapTerrain: React.FC<MapTerrainProps> = ({ rows, columns, index, type, visibility, iconSrc }) => {
 
     var color2 = false;
 
@@ -79,28 +73,32 @@ export const MapTerrain: React.FC<MapTerrainProps> = ({ rows, columns, index, ty
     return(
     <div>
         <motion.div
+        whileHover={{ y: -20 }}
+        whileTap={{ y: 500 }}
         initial={{scale: 0}}
         animate={{scale: 1}}
         exit={{scale: 0}}
         transition={{ ease: "easeInOut", duration: 0.3 }} 
         className={`${visibility && (color2 ? 'terrainStyle1' : 'terrainNone')}`}>
             <img className='terrainBg' src = {grass1Src} />
-            <div className={`${(visibility && (boss || potion || shield || sword )) && (boss) ? 'elementBossContainer' : 'elementContainer'}`}>
-                <img className={`${(visibility && (boss || potion || shield || sword )) && 'imgIconContainer'}`} src={elementIconSrc} alt=""/>
+            <div className={`${(visibility && (iconSrc != '') && (iconSrc == 'characters/skeleton1s' || iconSrc == 'characters/skeleton2s' || iconSrc == 'characters/knight1s' || iconSrc == 'characters/knight2s') ? 'elementBossContainer' : 'elementContainer')}`}>
+                <img className={`${(visibility && (iconSrc != '') && 'imgIconContainer')}`} src={elementIconSrc} alt=""/>
             </div>
             <div className={`${(visibility ? 'dirtContainer1': 'terrainNone')}`}>
                 <img className='dirtBg' src = {dirt1Src} />
             </div>
         </motion.div>
         <motion.div
+        whileHover={{ y: -20 }}
+        whileTap={{ y: 500 }}
         initial={{scale: 0}}
         animate={{scale: 1}}
         exit={{scale: 0}}
         transition={{ ease: "easeInOut", duration: 0.3 }} 
         className={`${visibility && (!color2 ? 'terrainStyle2' : 'terrainNone')}`}>
             <img className='terrainBg' src = {grass2Src}  />
-            <div className={`${(visibility && (boss || potion || shield || sword )) && (boss) ? 'elementBossContainer' : 'elementContainer'}`}>
-                <img className={`${(visibility && (boss || potion || shield || sword )) && 'imgIconContainer'}`} src={elementIconSrc} alt=""/>
+            <div className={`${(visibility && (iconSrc != '') && (iconSrc == 'characters/skeleton1s' || iconSrc == 'characters/skeleton2s' || iconSrc == 'characters/knight1s' || iconSrc == 'characters/knight2s') ? 'elementBossContainer' : 'elementContainer')}`}>
+                <img className={`${(visibility && (iconSrc != '') && 'imgIconContainer')}`} src={elementIconSrc} alt=""/>
             </div>
             <div className={`${(visibility ? 'dirtContainer2': 'terrainNone')}`}>
                 <img className='dirtBg' src = {dirt2Src} />
